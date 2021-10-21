@@ -18,97 +18,58 @@
 
 
 ## Demo
-Link: [https://indian-currency-prediction.herokuapp.com](https://indian-currency-prediction.herokuapp.com/)
-
 ![Capture1](https://github.com/RPNSINGH/Bank_Loan_Prediction_System/blob/main/Bank_loan_prediction/Capture1.PNG)
+![Capture2](https://github.com/RPNSINGH/Bank_Loan_Prediction_System/blob/main/Bank_loan_prediction/Capture2.PNG)
 
 ## Overview
 This is a simple image classification Flask app trained on the top of Keras API. The trained model (`app/model/model.h5`) takes an image (Indian Paper Currency) as an input and predict the class of image from __10, 20, 50, 100, 200, 500, 2000__ denomination.
 
 ## Motivation
-What could be a perfect way to utilize unfortunate lockdown period? Like most of you, I spend my time in cooking, Netflix, coding and reading some latest research papers on weekends. The idea of classifying indian currency struck to me when I was browsing through some research papers. I couldn't find any relevant research paper (and of course dataset!) associated with it. And that led me to collect the images of Indian currency to train a deep learning model using [this](https://github.com/hardikvasa/google-images-download) amazing tool.
+Lets Predict because we can do.
 
 ## Technical Aspect
-This project is divided into two part:
-1. Training a deep learning model using Keras. (_Not covered in this repo. I'll update the link here once I make it public._)
-2. Building and hosting a Flask web app on Heroku.
-    - A user can choose image from a device or capture it using a pre-built camera.
-    - Used __Amazon S3 Bucket__ to store the uploaded image and predictions.
-    - Used __CSRF Token__ to protect against CSRF attacks.
-    - Used __Sentry__ to catch the exception on the back-end.
-    - After uploading the image, the predictions are displayed on a __Bar Chart__.
+This project is divided into four part:
+1. Data analysis and data preprocessing :
+  - Using pandas to open and manipulate CSV file in jupyter notebook.
+  - Visulization using :
+    - Seaborn 
+    - Matplotlib
+  - Label Encoading 
+  - Standardization
+2. Outliers detection and removal using : 
+   - Percentile method
+   - Z score method
+   - IOR method
+3. Model selection and model training:
+ - Decision Tree Classifier
+ - Random Forest Classifier
+4. GUI (Tkinter)
 
 ## Installation
-The Code is written in Python 3.7. If you don't have Python installed you can find it [here](https://www.python.org/downloads/). If you are using a lower version of Python you can upgrade using the pip package, ensuring you have the latest version of pip. To install the required packages and libraries, run this command in the project directory after [cloning](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/) the repository:
-```bash
-pip install -r requirements.txt
-```
+The Code is written in Python 3.7. If you don't have Python installed you can find it [here](https://www.python.org/downloads/). If you are using a lower version of Python you can upgrade using the pip package, ensuring you have the latest version of pip. To install the required packages and libraries  
 
 ## Run
-> STEP 1
-#### Linux and macOS User
-Open `.bashrc` or `.zshrc` file and add the following credentials:
-```bash
-export AWS_ACCESS_KEY="your_aws_access_key"
-export AWS_SECRET_KEY="your_aws_secret_key"
-export ICP_BUCKET='your_aws_bucket_name'
-export ICP_BUCKET_REGION='bucket_region'
-export ICP_UPLOAD_DIR='bucket_path_to_save_images'
-export ICP_PRED_DIR='bucket_path_to_save_predictions'
-export ICP_FLASK_SECRET_KEY='anything_random_but_unique'
-export SENTRY_INIT='URL_given_by_sentry'
-```
-Note: __SENTRY_INIT__ is optional, only if you want to catch exceptions in the app, else comment/remove the dependencies and code associated with sentry in `app/main.py`
-
-#### Windows User
-Since, I don't have a system with Windows OS, here I collected some helpful resource on adding User Environment Variables in Windows.
+[Python](https://www.python.org/downloads/)<br>
+[Pandas](https://pandas.pydata.org/)<br>
+[Numpy](https://numpy.org/install/)<br>
+[Matplotlib](https://matplotlib.org/stable/users/installing.html)<br>
+[Seaborn](https://seaborn.pydata.org/installing.html)<br>
+[Sci-kit Learn](https://scikit-learn.org/stable/install.html)<br>
+[Jupyter notebook](https://jupyter.org/install)<br>
 
 __Attention__: Please perform the steps given in these tutorials at your own risk. Please don't mess up with the System Variables. It can potentially damage your PC. __You should know what you're doing__. 
 - https://www.tenforums.com/tutorials/121855-edit-user-system-environment-variables-windows.html
 - https://www.onmsft.com/how-to/how-to-set-an-environment-variable-in-windows-10
 
-> STEP 2
-
-To run the app in a local machine, shoot this command in the project directory:
-```bash
-gunicorn wsgi:app
-```
-
-## Deployement on Heroku
-Set the environment variable on Heroku as mentioned in _STEP 1_ in the __Run__ section. [[Reference](https://devcenter.heroku.com/articles/config-vars)]
-
-![](https://i.imgur.com/TmSNhYG.png)
-
-Our next step would be to follow the instruction given on [Heroku Documentation](https://devcenter.heroku.com/articles/getting-started-with-python) to deploy a web app.
-
-## Directory Tree 
-```
-├── app 
-│   ├── __init__.py
-│   ├── main.py
-│   ├── model
-│   ├── static
-│   └── templates
-├── config
-│   ├── __init__.py
-├── processing
-│   ├── __init__.py
-├── requirements.txt
-├── runtime.txt
-├── LICENSE
-├── Procfile
-├── README.md
-└── wsgi.py
-```
 
 ## To Do
 1. Convert the app to run without any internet connection, i.e. __PWA__.
 2. Add a better vizualization chart to display the predictions.
 
 ## Bug / Feature Request
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/rowhitswami/Indian-Currency-Prediction/issues/new) by including your search query and the expected result.
+If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/RPNSINGH/Bank_Loan_Prediction_System/issues/new) by including your search query and the expected result.
 
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/rowhitswami/Indian-Currency-Prediction/issues/new). Please include sample queries and their corresponding results.
+If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/RPNSINGH/Bank_Loan_Prediction_System/issues/new). Please include sample queries and their corresponding results.
 
 ## Technologies Used
 
