@@ -28,19 +28,19 @@ Lets Predict because we can.
 ## Technical Aspect
 This project is divided into four part:
 1. Data analysis and data preprocessing :
-  - Using pandas to open and manipulate CSV file in jupyter notebook.
-  - Visulization using :
-    - Seaborn 
-    - Matplotlib
-  - Label Encoading 
-  - Standardization
+   - Using pandas to open and manipulate CSV file in jupyter notebook.
+   - Visulization using :
+     - Seaborn 
+     - Matplotlib
+   - Label Encoading 
+   - Standardization
 2. Outliers detection and removal using : 
-   - Percentile method
-   - Z score method
-   - IOR method
+    - Percentile method
+    - Z score method
+    - IOR method
 3. Model selection and model training:
- - Decision Tree Classifier
- - Random Forest Classifier
+  - Decision Tree Classifier
+  - Random Forest Classifier
 4. GUI (Tkinter)
 
 ## Installation
@@ -68,8 +68,8 @@ __Attention__: Please perform the steps given in these tutorials at your own ris
 │   └── TKINTER_GUI.ipynb
 ├── datasets
 │   ├── bank.csv
-│    ├──preprocessed.csv
-│    ├──train.csv
+│   ├──preprocessed.csv
+│   ├──train.csv
 │
 ├── images
 
