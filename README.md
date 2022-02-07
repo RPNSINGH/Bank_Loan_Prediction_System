@@ -23,7 +23,8 @@
 This is a simple Tkinter app trained with machine learning algorithms. The trained model (`Tkinter_GUI`) takes inputs (*ie Applicant's_Income($),CoApplicant's_Income($),Loan_Amount($),Loan_Amount_Term($),Gender,Married,Dependents,Education,Credit_History,Property_Area,Self_Employed*) as an input and predicts the loan approval status.
 
 ## Motivation
-Lets Predict because we can.
+During Covid pandemic all banks as well as customers faced tons of difficulties because of restrictions and due to that some customesrs whose business went down needed some funds (or Loans) from their banks to restart their business ,but due to unavailablity of their employees banks were unable . 
+So to overcome this and with respect to future aspects we must be prepared and thats where this Idea striked me about making a model that can perform analysis on a loan request (based on old loan requests and their eligiblity)  decides whether that request is eligible or not .
 
 ## Technical Aspect
 This project is divided into four part:
